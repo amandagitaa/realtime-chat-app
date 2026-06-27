@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Contacts</h2>
+
+        <input
+            type="text"
+            id="searchContact"
+            placeholder="Search contact..."
+        >
+
+        <div id="users"></div>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div class="chat-area">
+
+        <!-- HEADER -->
+        <div class="chat-header">
+            <h2 id="chatWith">Pilih user</h2>
+            <div id="userStatus" class="user-status"></div>
+        </div>
+
+        <!-- CHAT BOX -->
+        <div id="chatBox" class="chat-box"></div>
+
+        <!-- EMPTY STATE -->
+        <div id="emptyState" style="
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:gray;
+            font-size:20px;
+        ">
+            Pilih kontak untuk mulai chat
+        </div>
+
+        <!-- TYPING -->
+        <div id="typingIndicator" class="typing-indicator"></div>
+
+        <!-- CHAT INPUT (DEFAULT HIDDEN) -->
+        <div
+            class="chat-input"
+            id="chatInputArea"
+            style="display:none;"
+        >
+            <input type="file" id="fileInput" hidden>
+
+            <button onclick="document.getElementById('fileInput').click()">
+                📎
+            </button>
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Type message..."
+            >
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
