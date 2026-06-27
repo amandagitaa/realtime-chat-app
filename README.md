@@ -216,8 +216,6 @@ chat-app/
 │   ├── login.html
 │   └── chat.html
 │
-├── uploads/
-│
 ├── server.js
 ├── package.json
 └── README.md
